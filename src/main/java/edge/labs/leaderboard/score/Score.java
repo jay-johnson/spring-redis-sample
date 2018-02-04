@@ -1,7 +1,9 @@
-package edge.labs.leaderboard;
+package edge.labs.leaderboard.score;
 
+import javax.persistence.Embeddable;
 import java.time.LocalDateTime;
 
+@Embeddable
 public class Score {
 
     public final String username;

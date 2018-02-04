@@ -1,5 +1,7 @@
 package edge.labs.leaderboard;
 
+import edge.labs.leaderboard.score.Score;
+
 import java.util.List;
 
 public class Leaderboard {
