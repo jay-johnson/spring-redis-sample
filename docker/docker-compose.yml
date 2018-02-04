@@ -1,0 +1,5 @@
+leaderboards:
+  image: redis:3-alpine
+  container_name: leaderboards
+  ports:
+    - "6379:6379"
