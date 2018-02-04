@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     background-color: #56727C;
+    margin-bottom: 15px;
 }
 
 .header-section {
@@ -40,6 +41,7 @@
     display: flex;
     flex-direction: column;
     border: 1px solid #CAD0D2;
+    padding: 10px;
     border-radius: 4px;
     overflow: hidden;
 }
@@ -61,7 +63,7 @@
     color: #57727C;
     font-size: 12px;
     text-align: center;
-    max-width: calc(100% - 30px);
+    /*max-width: calc(100% - 30px);*/
 }
 
 .card-subText {
@@ -71,9 +73,14 @@
     font-weight: 700;
     padding: 5px 15px;
     border-top: 1px solid #D7DBDD;
-    background-color: #EEF3F5;
 }
 
 .card-fixedWidth {
     max-width: 120px;
+}
+
+.leaderboards {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
 }

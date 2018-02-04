@@ -28,8 +28,9 @@
     <th:block th:each="leaderboard : ${leaderboards}">
         <div class="card card-fixedWidth">
             <div class="card-description">
-                <div class="icon card-descriptionIcon" th:text="${leaderboard.gameName}}">Loading...</div>
-                <div class="card-mainText" th:text="${leaderboard.curretTopScore}">...</div>
+                <div class="icon card-descriptionIcon">G</div>
+                <div class="card-mainText" th:text="${leaderboard.gameName}">...</div>
+                <div class="card-subText">...</div>
             </div>
         </div>
     </th:block>
