@@ -1,33 +1,45 @@
 package edge.labs.leaderboard;
 
 import edge.labs.leaderboard.score.Score;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/leaderboards")
 public class LeaderboardController {
 
+    LeaderboardRepository repository;
+
+    @Autowired
+    LeaderboardController(LeaderboardRepository repository) {
+        this.repository = repository;
+    }
+
     @GetMapping("/")
     public String leaderboardsPage(Model model) {
-
-        List<Score> scores = Arrays.asList(
-            new Score("medge", 1, LocalDateTime.now().minusDays(11)),
-            new Score("tom", 42, LocalDateTime.now().minusDays(4)),
-            new Score("ashley", 61255, LocalDateTime.now().minusDays(1))
-        );
-        Leaderboard test = new Leaderboard("EdgeLabs", scores);
-
-        model.addAttribute("leaderboards", Arrays.asList(test)); // TODO
+        model.addAttribute("leaderboards", repository.findAll());
         return "index";
     }
 
+    @PostMapping("/add")
+    public String addLeaderboard(@RequestBody Leaderboard leaderboard) {
+        repository.save(leaderboard);
+        return "redirect:/leaderboards/";
+    }
 
+    @PostMapping("/{id}/scores/add")
+    public String addScore(
+        @PathVariable("id") String id,
+        @RequestBody Score score) {
+
+        repository.findById(id)
+            .map(l -> l.addScore(score))
+            .map(l -> repository.save(l))
+            .orElseThrow(() -> new LeaderboardNotFound("Leaderboard " + id + " was not found"));
+
+        return "redirect:/leaderboards/";
+    }
 
 }

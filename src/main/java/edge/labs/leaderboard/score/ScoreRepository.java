@@ -1,6 +1,6 @@
 package edge.labs.leaderboard.score;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface ScoreRepository extends JpaRepository<ScoreTable, Long> {
+public interface ScoreRepository extends CrudRepository<Score, String> {
 }

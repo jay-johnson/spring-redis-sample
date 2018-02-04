@@ -37,9 +37,15 @@
     color: #D9E9EF;
 }
 
+.leaderboards {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 25px;
+}
+
 .card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border: 1px solid #CAD0D2;
     padding: 10px;
     border-radius: 4px;
@@ -79,10 +85,4 @@
 
 .card-fixedWidth {
     max-width: 120px;
-}
-
-.leaderboards {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 25px;
 }

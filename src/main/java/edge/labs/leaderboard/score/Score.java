@@ -1,27 +1,22 @@
 package edge.labs.leaderboard.score;
 
-import javax.persistence.Embeddable;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.redis.core.RedisHash;
+
 import java.time.LocalDateTime;
 
-@Embeddable
+@RedisHash("persons")
+@Data
+@NoArgsConstructor
+@Accessors(fluent = true)
 public class Score {
 
-    public final String username;
-    public final long score;
-    public final LocalDateTime scoreDateTime;
+    public @Id String id;
+    public String username;
+    public long score;
+    public LocalDateTime scoreDateTime;
 
-    public Score(String username, long score, LocalDateTime scoreDateTime) {
-        this.username = username;
-        this.score = score;
-        this.scoreDateTime = scoreDateTime;
-    }
-
-    @Override
-    public String toString() {
-        return "Score{" +
-            "username='" + username + '\'' +
-            ", score=" + score +
-            ", scoreDateTime=" + scoreDateTime +
-            '}';
-    }
 }
