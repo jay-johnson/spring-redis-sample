@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <!--<link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />-->
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css" />
+
+    <title>Leaderboards</title>
+</head>
+<body style="margin: 0">
+<div class="header">
+    <div class="header-section">
+        <div class="header-item header-logo">
+            <div class="fa fa-inbox">T</div>
+        </div>
+        <div class="header-item header-button is-site-header-item-selected">Leaderboards</div>
+    </div>
+    <div class="header-section">
+        <div class="header-item header-button">Log out</div>
+    </div>
+</div>
+
+<div class="leaderboards">
+    <th:block th:each="leaderboard : ${leaderboards}">
+        <div class="card card-fixedWidth">
+            <div class="card-description">
+                <div class="icon card-descriptionIcon" th:text="${leaderboard.gameName}}">Loading...</div>
+                <div class="card-mainText" th:text="${leaderboard.curretTopScore}">...</div>
+            </div>
+        </div>
+    </th:block>
+</div>
+</body>
+</html>
