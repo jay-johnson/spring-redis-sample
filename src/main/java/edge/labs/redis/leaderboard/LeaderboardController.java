@@ -1,6 +1,6 @@
-package edge.labs.leaderboard;
+package edge.labs.redis.leaderboard;
 
-import edge.labs.leaderboard.score.Score;
+import edge.labs.redis.score.Score;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

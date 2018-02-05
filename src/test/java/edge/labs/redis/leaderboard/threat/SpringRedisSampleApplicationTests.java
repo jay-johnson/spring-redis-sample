@@ -1,4 +1,4 @@
-package edge.labs.leaderboard.threat;
+package edge.labs.redis.leaderboard.threat;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

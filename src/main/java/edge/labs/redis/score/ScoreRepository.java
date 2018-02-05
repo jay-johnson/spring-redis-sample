@@ -1,4 +1,4 @@
-package edge.labs.leaderboard.score;
+package edge.labs.redis.score;
 
 import org.springframework.data.repository.CrudRepository;
 

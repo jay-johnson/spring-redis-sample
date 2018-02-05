@@ -1,4 +1,4 @@
-package edge.labs.leaderboard;
+package edge.labs.redis.leaderboard;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

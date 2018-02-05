@@ -1,17 +1,15 @@
-package edge.labs.leaderboard.score;
+package edge.labs.redis.score;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
 import java.time.LocalDateTime;
 
-@RedisHash("persons")
+@RedisHash("score")
 @Data
 @NoArgsConstructor
-@Accessors(fluent = true)
 public class Score {
 
     public @Id String id;
