@@ -1,0 +1,15 @@
+version: "3"
+services:
+  master-1:
+    build: ./redis
+    container_name: masterA
+    ports:
+      - "6379:6379"
+      - "16379:16379" # Cluster Bus
+
+  slave-1:
+    build: ./redis
+    container_name: slaveA
+    ports:
+      - "6379:6380"
+      - "16379:16380" # Cluster Bus
